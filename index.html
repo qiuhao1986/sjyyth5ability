@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>手厅H5能力规范v20160128</title>
+<title>手厅H5能力规范v20160217</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -33,7 +33,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160128 </p>
+    <p class="lead"> v20160217 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -51,6 +51,7 @@
         <li class=""><a href="#login"><i class="icon-chevron-right"> > </i> H5页面点击调用登录框功能</a></li>
         <li class=""><a href="#relogin"><i class="icon-chevron-right"> > </i> H5页面内部跳转js方法</a></li>
         <li class=""><a href="#huanxing3"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登 增加可配置启动广告)</a></li>
+        <li class=""><a href="#baoming"><i class="icon-chevron-right"> > </i> 安卓/ios客户端对应包名</a></li>
       </ul>
     </div>
     <div class="span9">
@@ -65,6 +66,8 @@
         <p class="lead">ios唤醒至h5后带的参数位数有限制；ios唤醒至native后带的参数位数无限制，并改成_separator_分隔符</p>
         <p class="lead">2016.01.28</p>
         <p class="lead">外部唤醒手厅(非免登 增加可配置启动广告) 中安卓版本限制为：>2.1.4</p>
+        <p class="lead">2016.02.17</p>
+        <p class="lead">增加安卓/ios 对应包名</p>
       </div>
 
       <section id="huanxing1">
@@ -273,6 +276,76 @@ if(is_iphone()){
         <img src="images/demo11.jpg" width="100">
         <a href="http://www.hssmwd.com/uploads/advert_native.html" target="_blank">唤醒到native的demo12</a>
         <img src="images/demo12.jpg" width="100">
+      </section>
+
+      <section id="baoming">
+        <div class="page-header">
+          <h1>安卓/ios 对应包名</h1>
+        </div>
+        <h3>安卓</h3>
+        <pre class="prettyprint linenums prettyprinted">
+'addr=com.businesshall.activity.PaymentActivity'充值页面
+'addr=com.chinamobile.flow.activity.FlowMainActivity'流量专区
+'addr=com.chinamobile.flow.activity.FlowOrderActivity'流量订购
+'addr=com.chinamobile.flow.activity.FlowStatMonthActivity'每月流量消耗统计
+'addr=com.chinamobile.flow.activity.FlowBillActivity'流量账单
+'addr=com.businesshall.activity.FamilyNetworkActivity'亲情网
+'addr=com.businesshall.activity.QueryAccountBillActivity'我的账单
+'addr=com.businesshall.activity.ChargeRecordActivity'充值记录
+'addr=com.businesshall.activity.ScoreQueryNewActivity'我的积分
+'addr=com.businesshall.activity.FlowPackageQueryActivity'套餐余量
+'addr=com.businesshall.activity.SimCardActivity'Sim卡备份
+'addr=com.businesshall.activity.SetActivity'设置
+'addr=com.businesshall.activity.FAQActivity'常见问题
+'addr=com.businesshall.activity.AboutUsActivity'关于我们
+'addr=com.businesshall.activity.FeedBackActivity'意见反馈
+'addr=com.businesshall.activity.MoreActivity'更多业务
+
+'addr=com.businesshall.activity.MyBusinessActivity&type=typevalue1'已购订业务查询value 
+'addr=com.businesshall.activity.LocationActivity&type=typevalue1'附近营业厅
+'addr=com.businesshall.activity.LocationActivity&type=typevalue2'宽带覆盖
+'addr=com.businesshall.activity.OrderActivity&type=marketidvalue2010020140313002'具体业务
+'addr=com.businesshall.activity.MessageActivity&type=MESSAGE_TYPEvalue0'我的消息
+
+ 'addr=xuniwang'虚拟网
+ 'addr=4gzixuan'4g自选
+        </pre>
+        <h3>ios</h3>
+        <pre class="prettyprint linenums prettyprinted">
+一级页面：<br>
+'zjmobile://RootViewController'>首页
+'zjmobile://QueryViewController'>业务查询
+'zjmobile://ManageViewController'>业务办理
+'zjmobile://DiscountViewController'>优惠活动
+
+二三级页面：<br>
+'zjmobile://Main&SettingViewController'>设置
+'zjmobile://Main&FeedbackViewController'>意见反馈
+'zjmobile://Main&BillViewController'>账单查询
+'zjmobile://Main&PackageViewController'>套餐余量
+'zjmobile://Main&OrderedViewController'>已订业务
+'zjmobile://Main&FNRootViewController'>家庭亲情网
+'zjmobile://Main&PointsQueryViewController'>我的积分
+'zjmobile://Main&RechargeViewController'>话费充值
+'zjmobile://Main&RechargeRecordViewController'>充值记录
+'zjmobile://Main&PackageChangeViewController'>套餐变更
+'zjmobile://Main&MorePackageViewController'>更多业务
+'zjmobile://Main&HotBusinessViewController'>热门业务
+'zjmobile://Main&AboutMeViewController'>关于
+'zjmobile://Main&FAQViewController'>常见问题
+'zjmobile://Main&PasswordModificationViewController'>密码修改
+'zjmobile://Main&PointsExchangeRecordViewController'>积分兑换记录
+
+Flow—流量专区故事板<br>
+'zjmobile://Flow&FlowMainController'>流量专区
+'zjmobile://Flow&FlowDayStatsController'>每日流量消耗统计
+'zjmobile://Flow&OtherFlowController'>其他网上流量
+'zjmobile://Flow&FlowSuitChangeController'>流量订购
+'zjmobile://Flow&FlowMonStatsController'>历史流量使用查询
+
+SecureNum—安心小号<br>
+'zjmobile://SecureNum&SecureNumMainController'>安心小号首页
+        </pre>
       </section>
 
     </div>
