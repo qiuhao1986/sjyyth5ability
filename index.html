@@ -148,6 +148,20 @@ gonativeAn="zjmobile://platformapi/startapp?addr=com.businesshall.activity.Payme
         <h3>核心代码</h3>
         <pre class="prettyprint linenums prettyprinted">
 v_ios="RechargeViewController" v_and="window.stub.jsMethod('com.businesshall.activity.PaymentActivity','1','');"
+注：ios: 内部跳转并未涉及到 & _separator_分隔符问题，都是用&。
+android：安卓跳转包名和下面的外部唤醒的包名相同，
+第二个参数固定数字：
+1常规页面 
+2虚拟网
+3 4G自选
+4微信微博短信等分享渠道相关 
+5通讯录相关
+6支付页面
+7检查更新 
+第三个参数默认为空，几个第三个参数不为空的例子： window.stub.jsMethod('com.businesshall.activity.OrderActivity','1','marketid&8010020140611001' 跳转到4G飞享套餐（各个业务页更改相应marketid）
+window.stub.jsMethod('com.chinamobile.flow.activity.FlowOrderActivity','1','type&1') 跳转到加油包
+window.stub.jsMethod('com.chinamobile.flow.activity.FlowOrderActivity','1','type&2') 跳转到夜间流量
+window.stub.jsMethod('com.chinamobile.flow.activity.FlowOrderActivity','1','type&3') 跳转到其他流量
 		</pre>
 		<h3>说明：</h3>
 		<p>跳转到其他页面，替换对应类名即可，具体请参考demo源码第53行。</p>
