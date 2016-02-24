@@ -329,7 +329,8 @@ if(is_iphone()){
         </pre>
         <h3>ios</h3>
         <pre class="prettyprint linenums prettyprinted">
-(带zjmobilesjyyt前缀用于外部唤醒)
+(带zjmobilesjyyt前缀用于外部唤醒 外部唤醒时才涉及到_separator_分隔符问题，内部跳转是用&符号连接。)
+外部唤醒：
 一级页面：
 'zjmobilesjyyt://RootViewController'首页
 'zjmobilesjyyt://QueryViewController'业务查询
@@ -365,6 +366,41 @@ Flow—流量专区故事板
 
 SecureNum—安心小号
 'zjmobilesjyyt://SecureNum_separator_SecureNumTabBarViewController'安心小号首页
+
+内部跳转：
+一级页面：
+'RootViewController'首页
+'QueryViewController'业务查询
+'ManageViewController'业务办理
+'DiscountViewController'优惠活动
+
+二三级页面：
+'Main&SettingViewController'设置
+'Main&FeedbackViewController'意见反馈
+'Main&BillViewController'账单查询
+'Main&PackageViewController'套餐余量
+'Main&OrderedViewController'已订业务
+'Main&FNRootViewController'家庭亲情网
+'Main&PointsQueryViewController'我的积分
+'Main&RechargeViewController'话费充值
+'Main&RechargeRecordViewController'充值记录
+'Main&PackageChangeViewController'套餐变更
+'Main&MorePackageViewController'更多业务
+'Main&HotBusinessViewController'热门业务
+'Main&AboutMeViewController'关于
+'Main&FAQViewController'常见问题
+'Main&PasswordModificationViewController'密码修改
+'Main&PointsExchangeRecordViewController'积分兑换记录
+
+Flow—流量专区故事板
+'Flow&FlowMainController'流量专区
+'Flow&FlowDayStatsController'每日流量消耗统计
+'Flow&OtherFlowController'其他网上流量
+'Flow&FlowSuitChangeController'流量订购
+'Flow&FlowMonStatsController'历史流量使用查询
+
+SecureNum—安心小号
+'SecureNum&SecureNumTabBarViewController'安心小号首页
         </pre>
       </section>
 
