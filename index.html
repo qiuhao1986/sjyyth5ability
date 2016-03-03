@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>手厅H5能力规范v20160217</title>
+<title>手厅H5能力规范</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -33,7 +33,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160224 </p>
+    <p class="lead"> v20160303 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -52,6 +52,7 @@
         <li class=""><a href="#relogin"><i class="icon-chevron-right"> > </i> H5页面内部跳转js方法</a></li>
         <li class=""><a href="#huanxing3"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登 增加可配置启动广告)</a></li>
         <li class=""><a href="#baoming"><i class="icon-chevron-right"> > </i> 安卓/ios客户端对应包名</a></li>
+        <li class=""><a href="#chama"><i class="icon-chevron-right"> > </i>  插码规范</a></li>
       </ul>
     </div>
     <div class="span9">
@@ -68,6 +69,8 @@
         <p class="lead">外部唤醒手厅(非免登 增加可配置启动广告) 中安卓版本限制为：>2.1.4</p>
         <p class="lead">2016.02.17</p>
         <p class="lead">增加安卓/ios 对应包名</p>
+        <p class="lead">2016.03.03</p>
+        <p class="lead">增加插码规范</p>
       </div>
 
       <section id="huanxing1">
@@ -404,6 +407,23 @@ SecureNum—安心小号
         </pre>
       </section>
 
+      <section id="chama">
+        <div class="page-header">
+          <h1>插码规范</h1>
+        </div>
+        <h3>参数说明</h3>
+        <pre class="prettyprint linenums prettyprinted">
+在每个工程文件夹中的js文件夹中引入3个插码文件：webtrends.hm.js webtrends.load.js webtrends.min.js
+在开发文件中每个页面中引入 js/webtrends.load.js即可。
+    </pre>
+    <h3>说明：参考demo</h3>
+    <p></p>
+        <h3>demo：</h3>
+        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/chongzhiV2/index.html" target="_blank">充值99折</a>
+        <img src="images/demo13.jpg" width="100">
+
+      </section>
+
     </div>
   </div>
 </div>
@@ -422,4 +442,4 @@ SecureNum—安心小号
 <script src="./js/prettify.js" type="text/javascript"></script> 
 <script src="./js/docs.js" type="text/javascript"></script>
 </body>
-</html>
+</html># circle
