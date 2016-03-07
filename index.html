@@ -33,7 +33,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160303 </p>
+    <p class="lead"> v20160307 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -53,6 +53,7 @@
         <li class=""><a href="#huanxing3"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登 增加可配置启动广告)</a></li>
         <li class=""><a href="#baoming"><i class="icon-chevron-right"> > </i> 安卓/ios客户端对应包名</a></li>
         <li class=""><a href="#chama"><i class="icon-chevron-right"> > </i>  插码规范</a></li>
+        <li class=""><a href="#qianduan"><i class="icon-chevron-right"> > </i>  前端字体相关规范</a></li>
       </ul>
     </div>
     <div class="span9">
@@ -71,6 +72,8 @@
         <p class="lead">增加安卓/ios 对应包名</p>
         <p class="lead">2016.03.03</p>
         <p class="lead">增加插码规范</p>
+        <p class="lead">2016.03.07</p>
+        <p class="lead">增加前端字体相关规范</p>
       </div>
 
       <section id="huanxing1">
@@ -425,6 +428,28 @@ SecureNum—安心小号
         <h3>demo：</h3>
         <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/chongzhiV2/index.html" target="_blank">充值99折</a>
         <img src="images/demo13.jpg" width="100">
+
+      </section>
+
+      <section id="qianduan">
+        <div class="page-header">
+          <h1>字体规范</h1>
+        </div>
+        <h3>参数说明</h3>
+        <pre class="prettyprint linenums prettyprinted">
+1.1  字体(font-family)
+设置字体：Helvetica,Arial ,sans-serif
+1.2  字体大小(font-size)
+统一rem为单位，用js控制根元素的字体大小，代码如下
+前端引入adapt.js
+并设置：
+adapt(w);// w值为设计稿的1/2
+    </pre>
+    <h3>说明：参考demo</h3>
+    <p></p>
+        <h3>demo：</h3>
+        <a href="http://www.hssmwd.com/uploads/sjyyt/example/demo.html" target="_blank">前端空白模版</a>
+        <img src="images/demo14.jpg" width="100">
 
       </section>
 
