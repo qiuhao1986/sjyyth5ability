@@ -34,7 +34,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160323 </p>
+    <p class="lead"> v20160325 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -263,52 +263,61 @@ if(is_iphone()){
 
       <section id="relogin">
         <div class="page-header">
-          <h1>H5页面内部跳转js方法20160323更新</h1>
+          <h1>H5页面内部跳转js方法20160325更新</h1>
         </div>
         <h3>核心代码</h3>
         <pre class="prettyprint linenums prettyprinted">
-	仅H5：
-	  urlInfo = 'channel='+channel+'&version='+version;
-	  gotoUrl = gUrl+"sjyytv3/found/found_list.html";
-	  isnative = 2;//2为h5 1为native
-	  mytitle = '发现活动';
-	  islogin = 1;//1需要登录 0不需要
-	  isgesture = 0;//1需要手势 0不需要手势
-	  goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
+  仅H5：
+  urlInfo = 'channel='+channel+'&version='+version;
+  gotoUrl = gUrl+"sjyytv3/found/found_list.html";
+  isnative = 2;//2为h5 1为native
+  mytitle = '发现活动';
+  islogin = 1;//1需要登录 0不需要
+  isgesture = 0;//1需要手势 0不需要手势
+  goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
+    
+  流量专区跳转至魔品应用市场详情页JS方法:(仅安卓)
+  urlInfo = 'appkey='+appkey;//魔品首页appkey为空，详情页为appkey=123,其中123为应用编号
+  gotoUrl = 'MopoteManager';
+  isnative = 2;//2为h5 1为native
+  mytitle = '';
+  islogin = 1;//1需要登录 0不需要
+  isgesture = 0;//1需要手势 0不需要手势
+  goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
 
-	兼容H5和native：
-        urlInfo = $(this).attr('urlInfo');
-        gotoUrl = $(this).attr('gotoUrl');
-        native_args = $(this).attr('native_args');
-        storyboardname = $(this).attr('storyboardname');
-        isnative = parseInt($(this).attr('isnative'));//type:1native 2web
-        mytitle = $(this).attr('mytitle');
-        islogin = parseInt($(this).attr('islogin'));
-        isgesture = parseInt($(this).attr('isgesture'));
-        viewname = $(this).attr('viewname');
+  兼容H5和native：
+  urlInfo = $(this).attr('urlInfo');
+  gotoUrl = $(this).attr('gotoUrl');
+  native_args = $(this).attr('native_args');
+  storyboardname = $(this).attr('storyboardname');
+  isnative = parseInt($(this).attr('isnative'));//type:1native 2web
+  mytitle = $(this).attr('mytitle');
+  islogin = parseInt($(this).attr('islogin'));
+  isgesture = parseInt($(this).attr('isgesture'));
+  viewname = $(this).attr('viewname');
 
-        if(isnative == 2){ // 1 native 2 h5  
-          goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
-        }else{//native：安卓: viewname+&+native_args（如果有native_args）; ios: storyboardname+&+viewname（如果有viewname）
-          if(is_android()){
-            var andr = "";
-            if(native_args == ""){
-              andr = viewname;
-            }else{
-              andr = viewname+"&"+native_args;
-            }
-          goweb(islogin,isgesture,andr,isnative,mytitle,urlInfo);
+    if(isnative == 2){ // 1 native 2 h5  
+      goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
+    }else{//native：安卓: viewname+&+native_args（如果有native_args）; ios: storyboardname+&+viewname（如果有viewname）
+      if(is_android()){
+        var andr = "";
+        if(native_args == ""){
+          andr = viewname;
+        }else{
+          andr = viewname+"&"+native_args;
         }
-          if(is_iphone()){
-            var ios = "";
-            if(storyboardname == ""){
-              ios = viewname;
-            }else{
-              ios = storyboardname+"&"+viewname;
-            }
-          goweb(islogin,isgesture,ios,isnative,mytitle,urlInfo);
-          }
-        } 
+      goweb(islogin,isgesture,andr,isnative,mytitle,urlInfo);
+    }
+      if(is_iphone()){
+        var ios = "";
+        if(storyboardname == ""){
+          ios = viewname;
+        }else{
+          ios = storyboardname+"&"+viewname;
+        }
+      goweb(islogin,isgesture,ios,isnative,mytitle,urlInfo);
+      }
+    } 
     </pre>
     <h3>说明：参考demo</h3>
     <p></p>
