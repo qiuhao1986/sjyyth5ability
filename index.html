@@ -187,19 +187,14 @@ android：安卓跳转包名和下面的外部唤醒的包名相同，
         </div>
         <h3>核心代码</h3>
         <pre class="prettyprint linenums prettyprinted">
-//安卓
-versionid = window.zjsjyyt.get("versionid");//获取版本号
-//ios
-function versionid_ios(){       
-  var json ='{"function":"getVersionNumOfAPP:","argument":"","callback":"versionid_ios_cbk"}';
-  webPostnotification(json);
-}
+        引入js：../js/zjversion.js
+        页面：var version = ZJ.Version.versionid();//定义全局版本号versionid
 		</pre>
 		<h3>说明：</h3>
 		<p></p>
         <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/version.html" target="_blank">demo7</a>
-        <img src="images/demo7.jpg" width="100">
+        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyytv3/found/index.html" target="_blank">demo7</a>
+        <img src="images/demo7_new.jpg" width="100">
       </section>
 
       <section id="share">
