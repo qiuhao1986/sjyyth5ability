@@ -189,8 +189,8 @@ android：安卓跳转包名和下面的外部唤醒的包名相同，
         <pre class="prettyprint linenums prettyprinted">
         引入js：../js/zjversion.js
         页面：var version = ZJ.Version.versionid();//定义全局版本号versionid
-        注：直接调用时安卓可获取版本号 ios为undefined；所以给要调用版本号的函数加延时：
-        setTimeout(...,0);
+        注：直接调用时安卓可获取版本号 ios为undefined；解决方案：
+        原本直接调用的test()改成setTimeout(function(){test();},0); 
 		</pre>
 		<h3>说明：</h3>
 		<p></p>
