@@ -277,9 +277,19 @@ if(is_iphone()){
   isgesture = 0;//1需要手势 0不需要手势
   goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
   
-特例：
-  流量专区跳转至魔品应用市场详情页JS方法:(仅安卓)
+仅native特例：
+  3期流量专区跳转至魔品应用市场详情页JS方法:(仅安卓)
+  版本：3.0.0&3.0.1
   urlInfo = 'appkey='+appkey;//魔品首页:urlInfo = ''; 详情页为urlInfo = 'appkey=123',其中123为应用编号
+  gotoUrl = 'MopoteManager';
+  isnative = 1;//2为h5 1为native
+  mytitle = '';
+  islogin = 1;//1需要登录 0不需要
+  isgesture = 0;//1需要手势 0不需要手势
+  goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
+  版本：>=3.0.2
+  此方法兼容3.0.0&3.0.1
+  urlInfo = newpara+'='+appkey;//魔品首页:urlInfo = '';//需求变更 =两边 左边是新参数(待定)的值右边是appkey的值
   gotoUrl = 'MopoteManager';
   isnative = 1;//2为h5 1为native
   mytitle = '';
