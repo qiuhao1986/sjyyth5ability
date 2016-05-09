@@ -268,15 +268,16 @@ if(is_iphone()){
         </div>
         <h3>核心代码</h3>
         <pre class="prettyprint linenums prettyprinted">
-  仅H5：
-  urlInfo = 'channel='+channel+'&version='+version;
-  gotoUrl = gUrl+"sjyytv3/found/found_list.html";
+仅H5：
+  urlInfo = 'channel='+channel+'&version='+version;//url参数
+  gotoUrl = gUrl+"sjyytv3/found/found_list.html";//h5跳转地址
   isnative = 2;//2为h5 1为native
   mytitle = '发现活动';
   islogin = 1;//1需要登录 0不需要
   isgesture = 0;//1需要手势 0不需要手势
   goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
-    
+  
+特例：
   流量专区跳转至魔品应用市场详情页JS方法:(仅安卓)
   urlInfo = 'appkey='+appkey;//魔品首页:urlInfo = ''; 详情页为urlInfo = 'appkey=123',其中123为应用编号
   gotoUrl = 'MopoteManager';
@@ -286,39 +287,107 @@ if(is_iphone()){
   isgesture = 0;//1需要手势 0不需要手势
   goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
 
-  兼容H5和native：
-  urlInfo = $(this).attr('urlInfo');
-  gotoUrl = $(this).attr('gotoUrl');
-  native_args = $(this).attr('native_args');
-  storyboardname = $(this).attr('storyboardname');
-  isnative = parseInt($(this).attr('isnative'));//type:1native 2web
-  mytitle = $(this).attr('mytitle');
-  islogin = parseInt($(this).attr('islogin'));
-  isgesture = parseInt($(this).attr('isgesture'));
-  viewname = $(this).attr('viewname');
+兼容H5和native：
+//跳转参数列表
+var urlInfo = '';//url参数
+var gotoUrl = '';//h5跳转地址
+var native_args = '';//安卓包的参数
+var storyboardname = '';//ios故事版
+var isnative = '';//是否native 1是 2是h5  int
+var mytitle = '';//标题
+var islogin = '';//是否需要登录0不需要 1需要 int
+var isgesture = '';//是否需要手势密码，0不需要 1需要 int
+var viewname = '';//包名（ios/安卓）
+var androidNative = '';//安卓包名
+//native：安卓: androidNative+&+native_args（如果有native_args）; ios: storyboardname+&+viewname（如果有viewname）
 
-    if(isnative == 2){ // 1 native 2 h5  
-      goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
-    }else{//native：安卓: viewname+&+native_args（如果有native_args）; ios: storyboardname+&+viewname（如果有viewname）
-      if(is_android()){
-        var andr = "";
-        if(native_args == ""){
-          andr = viewname;
-        }else{
-          andr = viewname+"&"+native_args;
+//充值 native
+$(".jgg1").bind('click',function(){
+  urlInfo = '';
+  gotoUrl = '';
+  native_args = '';
+  storyboardname = 'Main';
+  isnative = 1;//type:1native 2web
+  mytitle = '充值';
+  islogin = 1;
+  isgesture = 0;
+  viewname = 'RechargeViewController';
+  androidNative = 'com.businesshall.activity.PaymentActivity';
+  goweb_rdy(urlInfo,gotoUrl,native_args,storyboardname,isnative,mytitle,islogin,isgesture,viewname,androidNative);
+
+})
+//4G飞享套餐
+$(".jgg4").bind('click',function(){
+  urlInfo = 'marketid=8010020140611001&type=1';
+  gotoUrl = 'http://app.m.zj.chinamobile.com/zjweb/sjyyt/handle.html';
+  native_args = '';
+  storyboardname = '';
+  isnative = 2;//type:1native 2web
+  mytitle = '4G飞享套餐';
+  islogin = 1;
+  isgesture = 0;
+  viewname = '';
+  androidNative = '';
+  goweb_rdy(urlInfo,gotoUrl,native_args,storyboardname,isnative,mytitle,islogin,isgesture,viewname,androidNative);
+
+})
+
+function goweb_rdy(urlInfo, gotoUrl, native_args, storyboardname, isnative, mytitle, islogin, isgesture, viewname, androidNative) {
+    if (isnative == 2) { // 1 native 2 h5  
+        goweb(islogin, isgesture, gotoUrl, isnative, mytitle, urlInfo);
+    } else { //native：安卓: viewname+&+native_args（如果有native_args）; ios: storyboardname+&+viewname（如果有viewname）
+        if (is_android()) {
+            var andr = "";
+            if (native_args == "") {
+                andr = androidNative;
+            } else {
+                andr = androidNative + "&" + native_args;
+            }
+            goweb(islogin, isgesture, andr, isnative, mytitle, urlInfo);
         }
-      goweb(islogin,isgesture,andr,isnative,mytitle,urlInfo);
+        if (is_iphone()) {
+            var ios = "";
+            if (storyboardname == "") {
+                ios = viewname;
+            } else {
+                ios = storyboardname + "&" + viewname;
+            }
+            goweb(islogin, isgesture, ios, isnative, mytitle, urlInfo);
+        }
     }
-      if(is_iphone()){
-        var ios = "";
-        if(storyboardname == ""){
-          ios = viewname;
-        }else{
-          ios = storyboardname+"&"+viewname;
-        }
-      goweb(islogin,isgesture,ios,isnative,mytitle,urlInfo);
-      }
-    } 
+}
+
+function goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo){
+  if(is_android()){
+    window.stub.gotowebview(islogin,isnative,gotoUrl,urlInfo,mytitle,isgesture);//第一个参数：0为默认正常情况 不需要登录 1为网址无参 需要登录 2为网址有参session过期; 第二个参数： 1 native 2 h5  最后一个1是需要手势，0则不需要手势。
+  }
+  if(is_iphone()){
+    gotowebview_ios(mytitle,gotoUrl,urlInfo,islogin,isgesture);
+  }
+}
+function gotowebview_ios(mytitle,gotoUrl,urlInfo,islogin,isgesture){
+  //var json ='{"function":"webloginAndJump:","targetLink":"'+gotoUrl+'","webArg":"'+urlInfo+'","title":"'+mytitle+'"}';
+  var json ='{"function":"webloginAndJump:","title":"'+mytitle+'","targetLink":"'+gotoUrl+'","webArg":"'+urlInfo+'","needLogin":"'+islogin+'","needGesture":"'+isgesture+'"}';
+    webPostnotification(json);
+}
+function webPostnotification(func){  
+    document.location ="webkitpostnotification:"+func;
+}
+//判断环境
+function is_android(){
+    if(ua.match(/android/i)=="android"&&ua.match(/iemobile/i)!="iemobile") {
+         return true;
+    } else {
+         return false;
+    }
+}
+function is_iphone(){
+    if(ua.match(/iphone/i)=="iphone"&&ua.match(/iemobile/i)!="iemobile") {
+         return true;
+    } else {
+         return false;
+   }
+}
     </pre>
     <h3>说明：参考demo</h3>
     <p></p>
