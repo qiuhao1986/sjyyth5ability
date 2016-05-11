@@ -34,7 +34,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160510 </p>
+    <p class="lead"> v20160511 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -264,10 +264,21 @@ if(is_iphone()){
 
       <section id="relogin">
         <div class="page-header">
-          <h1>H5页面内部跳转js方法20160325更新</h1>
+          <h1>H5页面内部跳转js方法20160511更新</h1>
         </div>
         <h3>核心代码</h3>
         <pre class="prettyprint linenums prettyprinted">
+说明：使用前加是否是手厅判断（根据具体业务场景而定 仅仅是手厅则不用 如有外部渠道则必须）：
+var versionid = ZJ.Version.versionid();//定义全局版本号versionid
+
+$('.test').click(function(){
+  if(versionid){
+    alert('是手厅 跳转方式可用goweb方法')
+  }else{
+    alert('不是手厅 跳转方式用常规js跳转')   
+  }
+})
+测试demo： http://www.nczzt.com/uploads/version.html 
 仅H5：
   urlInfo = 'channel='+channel+'&version='+version;//url参数
   gotoUrl = gUrl+"sjyytv3/found/found_list.html";//h5跳转地址
