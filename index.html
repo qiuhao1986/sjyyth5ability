@@ -201,7 +201,7 @@ android：安卓跳转包名和下面的外部唤醒的包名相同，
 
       <section id="share">
         <div class="page-header">
-          <h1>分享能力（朋友 朋友圈 短信 微信）</h1>
+          <h1>分享能力（朋友 朋友圈 短信 微信） 20160512 新增qq和qq空间和微博v2 要求ios>3.0.0 安卓>3.0.1</h1>
         </div>
         <h3>参数说明</h3>
         <pre class="prettyprint linenums prettyprinted">
@@ -214,12 +214,18 @@ content_weixin	字符串	微信和朋友圈的内容
 link_weixin	字符串	微信和朋友圈的链接
 content_message	字符串	短信的内容
 
+var title_qq = '';//qq和qq空间的title
+var imgUrl_qq = '';//qq和qq空间的图片
+var content_qq = '';//qq和qq空间的内容
+var link_qq = '';//qq和qq空间的链接
+
+微博v2的方法解决了ios中 入参的网址无法带参数的问题。
 		</pre>
 		<h3>说明：参考demo中的分享功能源码</h3>
 		<p></p>
         <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/ercichongzhi/index.html" target="_blank">demo8</a>
-        <img src="images/demo8.jpg" width="100">
+        <a href="http://www.nczzt.com/uploads/chongzhi/index.html" target="_blank">demo8</a>
+        <img src="images/demo8_2.jpg" width="100">
       </section>
 
       <section id="txl">
