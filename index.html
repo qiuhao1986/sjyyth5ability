@@ -368,7 +368,8 @@ function goweb_rdy(urlInfo, gotoUrl, native_args, storyboardname, isnative, myti
             if (native_args == "") {
                 andr = androidNative;
             } else {
-                andr = androidNative + "&" + native_args;
+                andr = androidNative;
+                urlInfo = native_args;//20160517修改  安卓的包名参数也放到urlInfo里。
             }
             goweb(islogin, isgesture, andr, isnative, mytitle, urlInfo);
         }
