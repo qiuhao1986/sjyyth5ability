@@ -34,7 +34,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160517 </p>
+    <p class="lead"> v20160523 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -42,11 +42,11 @@
   <div class="row">
     <div class="span3 bs-docs-sidebar">
       <ul class="nav nav-list bs-docs-sidenav affix-top">
-        <li class="active"><a href="#version"><i class="icon-chevron-right"> > </i> version</a></li>
         <li class=""><a href="#huanxing1"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登)</a></li>
         <li class=""><a href="#huanxing2"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(免登)</a></li>
         <li class=""><a href="#tiaozhuan"><i class="icon-chevron-right"> > </i> 内部h5页面跳转到native</a></li>
         <li class=""><a href="#banben"><i class="icon-chevron-right"> > </i> 获取版本号</a></li>
+        <li class=""><a href="#isApp"><i class="icon-chevron-right"> > </i> 判断是否是手厅</a></li>
         <li class=""><a href="#share"><i class="icon-chevron-right"> > </i> 分享能力</a></li>
         <li class=""><a href="#txl"><i class="icon-chevron-right"> > </i> 通讯录（单条信息、所有联系人信息）</a></li>
         <li class=""><a href="#login"><i class="icon-chevron-right"> > </i> H5页面点击调用登录框功能</a></li>
@@ -187,16 +187,41 @@ android：安卓跳转包名和下面的外部唤醒的包名相同，
         </div>
         <h3>核心代码</h3>
         <pre class="prettyprint linenums prettyprinted">
-        引入js：../js/zjversion.js
-        页面：var versionid = ZJ.Version.versionid();//定义全局版本号versionid
-        注：直接调用时安卓可获取版本号 ios为undefined；解决方案：
-        原本直接调用的test()改成setTimeout(function(){test();},0); 
-		</pre>
-		<h3>说明：</h3>
-		<p></p>
+引入js：../js/zjversion.js
+页面：var versionid = ZJ.Version.versionid();//定义全局版本号versionid
+注：直接调用时安卓可获取版本号 ios为undefined；解决方案：
+原本直接调用的test()改成setTimeout(function(){test();},0); 
+    </pre>
+    <h3>说明：</h3>
+    <p></p>
         <h3>demo：</h3>
         <a href="http://app.m.zj.chinamobile.com/zjweb/sjyytv3/found/index.html" target="_blank">demo7</a>
         <img src="images/demo7_new.jpg" width="100">
+      </section>
+
+      <section id="isApp">
+        <div class="page-header">
+          <h1>通过获取版本号来判断当前环境是否是手厅</h1>
+        </div>
+        <h3>核心代码</h3>
+        <pre class="prettyprint linenums prettyprinted">
+var versionid = ZJ.Version.versionid();//定义全局版本号versionid
+
+setTimeout(function(){isApp();},0); 
+
+function isApp(){
+  if(versionid){
+    alert('是手厅')
+  }else{
+    alert('不是手厅')   
+  }
+}
+    </pre>
+    <h3>说明：</h3>
+    <p></p>
+        <h3>demo：</h3>
+        <a href="http://www.nczzt.com/uploads/version2.html" target="_blank">demo7</a>
+        <img src="images/demo18.jpg" width="100">
       </section>
 
       <section id="share">
