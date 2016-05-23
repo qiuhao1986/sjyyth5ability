@@ -201,7 +201,7 @@ android：安卓跳转包名和下面的外部唤醒的包名相同，
 
       <section id="isApp">
         <div class="page-header">
-          <h1>通过获取版本号来判断当前环境是否是手厅</h1>
+          <h1>通过获取版本号来判断当前环境是否是手厅:经过验证在ios的safari浏览器中会先弹框报错，此方法不完善。</h1>
         </div>
         <h3>核心代码</h3>
         <pre class="prettyprint linenums prettyprinted">
@@ -222,6 +222,31 @@ function isApp(){
         <h3>demo：</h3>
         <a href="http://www.nczzt.com/uploads/version2.html" target="_blank">demo7</a>
         <img src="images/demo18.jpg" width="100">
+
+        <div class="page-header">
+          <h1>直接判断是否是手厅环境和版本号新方法 20150523</h1>
+        </div>
+        <h3>核心代码</h3>
+        <pre class="prettyprint linenums prettyprinted">
+var ua = navigator.userAgent.toLowerCase();
+var versionid = '';//手厅版本号
+
+if(is_app()){
+  alert('是手厅')
+  var versionid = ua.match(/sjyyt\/(\S*)/)[1];//获取版本号
+  alert('版本号是'+versionid)
+}else{
+  alert('不是手厅')
+}
+
+
+    </pre>
+    <h3>说明：</h3>
+    <p>打开页面同时判断是否手厅 要求安卓>3.0.1 ios>3.0.0 老版本无效 兼容思路可以参考分享功能：若无法使用请升级客户端 引导用户使用最新客户端。
+</p>
+        <h3>demo：</h3>
+        <a href="http://www.nczzt.com/uploads/isapp.html" target="_blank">demo7</a>
+        <img src="images/demo19.jpg" width="100">
       </section>
 
       <section id="share">
