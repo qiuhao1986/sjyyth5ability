@@ -34,7 +34,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160601 </p>
+    <p class="lead"> v20160613 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -253,7 +253,7 @@ if(is_app()){
 
       <section id="share">
         <div class="page-header">
-          <h1>分享能力（朋友 朋友圈 短信 微信） 20160512 新增qq和qq空间和微博v2 要求ios>3.0.0 安卓>3.0.1</h1>
+          <h1>分享能力（朋友 朋友圈 短信 微信） 20160512 新增qq和qq空间和微博v2 手厅版本要求ios>3.0.0 安卓>3.0.1 <br>20160613 新增短信默认入参号码 1个或者多个 手厅版本要求ios>=3.1.0 安卓>=3.1.0</h1>
         </div>
         <h3>参数说明</h3>
         <pre class="prettyprint linenums prettyprinted">
@@ -266,14 +266,18 @@ content_weixin	字符串	微信和朋友圈的内容
 link_weixin	字符串	微信和朋友圈的链接
 content_message	字符串	短信的内容
 
+num_message = [13868019995,13456868493];//短信分享的默认手机号
 var title_qq = '';//qq和qq空间的title
 var imgUrl_qq = '';//qq和qq空间的图片
 var content_qq = '';//qq和qq空间的内容
 var link_qq = '';//qq和qq空间的链接
 
 微博v2的方法解决了ios中 入参的网址无法带参数的问题。
+
+参考 http://www.nczzt.com/uploads/chongzhi/js/clicksharev2.js
+
 		</pre>
-		<h3>说明：参考demo中的分享功能源码</h3>
+		<h3>说明：参考demo中的分享功能源码 </h3>
 		<p></p>
         <h3>demo：</h3>
         <a href="http://www.nczzt.com/uploads/chongzhi/index.html" target="_blank">demo8</a>
@@ -750,6 +754,7 @@ MARKETID  MARKETNAME
 ZJ.doClose();
 ZJ.doReturn();
 具体请查看 http://www.nczzt.com/uploads/closeback/js/zjcloseback.js 
+最新能力要求安卓 ios 版本 : >3.0.2 (均未上线)
     </pre>
     <h3>说明：参考demo</h3>
     <p></p>
