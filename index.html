@@ -16,7 +16,7 @@
 <link href="./css/prettify.css" rel="stylesheet">
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
-<div id="qrcode"></div>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -34,7 +34,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160613 </p>
+    <p class="lead"> v20160621 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -51,13 +51,14 @@
         <li class=""><a href="#txl"><i class="icon-chevron-right"> > </i> 通讯录（单条&所有人）</a></li>
         <li class=""><a href="#login"><i class="icon-chevron-right"> > </i> H5页面点击调用登录框功能</a></li>
         <li class=""><a href="#relogin"><i class="icon-chevron-right"> > </i> H5页面内部跳转js方法</a></li>
-        <li class=""><a href="#huanxing3"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登 增加可配置启动广告)</a></li>
+        <li class=""><a href="#huanxing3"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登2)</a></li>
         <li class=""><a href="#baoming"><i class="icon-chevron-right"> > </i> 安卓/ios客户端对应包名</a></li>
         <li class=""><a href="#chama"><i class="icon-chevron-right"> > </i>  插码规范</a></li>
         <li class=""><a href="#qianduan"><i class="icon-chevron-right"> > </i>  前端字体相关规范</a></li>
         <li class=""><a href="#marketid"><i class="icon-chevron-right"> > </i>  handle业务对应marketid</a></li>
         <li class=""><a href="#anquanjiagu"><i class="icon-chevron-right"> > </i>  H5安全加固获取新常规参数</a></li>
         <li class=""><a href="#closeback"><i class="icon-chevron-right"> > </i>  H5能力之关闭和后退</a></li>
+        <li class=""><a href="#qrcode"><i class="icon-chevron-right"> > </i>  H5能力之调用手厅扫一扫</a></li>
       </ul>
     </div>
     <div class="span9">
@@ -494,7 +495,7 @@ function is_iphone(){
         <h3>参数说明</h3>
         <pre class="prettyprint linenums prettyprinted">
 版本要求:ios>2.3.2 ; 安卓>2.1.4
-在唤醒中间页基础之上加入参:advert=0　启动app时有广告页；advert=１　启动app时无广告页
+在唤醒中间页基础之上加入参:advert=0　启动app时有广告页；advert=1　启动app时无广告页
     </pre>
     <h3>说明：参考demo</h3>
     <p></p>
@@ -754,12 +755,33 @@ MARKETID  MARKETNAME
 ZJ.doClose();
 ZJ.doReturn();
 具体请查看 http://www.nczzt.com/uploads/closeback/js/zjcloseback.js 
-最新能力要求安卓 ios 版本 : >3.0.2 (均未上线)
+最新能力要求安卓 ios 版本 : >3.0.2
     </pre>
     <h3>说明：参考demo</h3>
     <p></p>
         <h3>demo：</h3>
         <a href="http://www.nczzt.com/uploads/closeback/index.html" target="_blank">H5能力之关闭和后退</a>
+        <img src="images/demo21.jpg" width="100">
+      </section>
+
+      <section id="qrcode">
+        <div class="page-header">
+          <h1>H5能力之调用手厅扫一扫</h1>
+        </div>
+        <h3>参数说明</h3>
+        <pre class="prettyprint linenums prettyprinted">
+引入zjqrcode.js
+ZJ.doQrcode();
+
+具体请查看 http://www.nczzt.com/uploads/qrcode/js/zjqrcode.js
+最新能力要求安卓 ios 版本 : >3.1.1
+
+此扫一扫是获取二维码中的字符串 回调给前端页面使用
+    </pre>
+    <h3>说明：参考demo</h3>
+    <p></p>
+        <h3>demo：</h3>
+        <a href="http://www.nczzt.com/uploads/qrcode/index.html" target="_blank">H5能力之调用手厅扫一扫</a>
         <img src="images/demo21.jpg" width="100">
       </section>
 
