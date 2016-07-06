@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<title>手厅H5能力规范</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="robots" content="index,follow">
-<meta name="application-name" content="bootcss.com">
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-<link type="text/css" href="./css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
-<link type="text/css" href="./css/font-awesome.min.css" rel="stylesheet">
-<link href="./css/docs.css" rel="stylesheet">
-<link href="./css/prettify.css" rel="stylesheet">
-<style type="text/css">
-.bs-docs-sidenav li{ line-height: 18px;}
-</style>
-</head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
 
 <div class="navbar navbar-inverse navbar-fixed-top">
