@@ -23,12 +23,10 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="http://app.m.zj.chinamobile.com/zjweb/download.jsp" target="_blank">浙江移动手机营业厅</a>
+      [浙江移动手机营业厅](http://app.m.zj.chinamobile.com/zjweb/download.jsp)
       <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="active"> <a href="index.html">手册</a> </li>
-          <li class="active"> <a href="urls.html">H5汇总</a> </li>
-        </ul>
+
+*   [手册](index.html)*   [H5汇总](urls.html)
         <div id="twitter-share" class="pull-right"></div>
       </div>
     </div>
@@ -36,64 +34,91 @@
 </div>
 <header class="jumbotron subhead" id="overview">
   <div class="container">
-    <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160704 </p>
+
+# 手厅H5能力规范 
+
+ v20160704 
+
   </div>
   <div id="version"></div>
 </header>
 <div class="container">
   <div class="row">
     <div class="span3 bs-docs-sidebar">
-      <ul class="nav nav-list bs-docs-sidenav affix-top">
-        <li class=""><a href="#huanxing1"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登)</a></li>
-        <li class=""><a href="#huanxing2"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(免登)</a></li>
-        <li class=""><a href="#tiaozhuan"><i class="icon-chevron-right"> > </i> 内部h5页面跳转到native</a></li>
-        <li class=""><a href="#banben"><i class="icon-chevron-right"> > </i> 获取版本号</a></li>
-        <li class=""><a href="#isApp"><i class="icon-chevron-right"> > </i> 判断是否是手厅</a></li>
-        <li class=""><a href="#share"><i class="icon-chevron-right"> > </i> 分享能力</a></li>
-        <li class=""><a href="#txl"><i class="icon-chevron-right"> > </i> 通讯录（单条&所有人）</a></li>
-        <li class=""><a href="#login"><i class="icon-chevron-right"> > </i> H5页面点击调用登录框功能</a></li>
-        <li class=""><a href="#relogin"><i class="icon-chevron-right"> > </i> H5页面内部跳转js方法</a></li>
-        <li class=""><a href="#huanxing3"><i class="icon-chevron-right"> > </i> 外部唤醒手厅(非免登2)</a></li>
-        <li class=""><a href="#baoming"><i class="icon-chevron-right"> > </i> 安卓/ios客户端对应包名</a></li>
-        <li class=""><a href="#chama"><i class="icon-chevron-right"> > </i>  插码规范</a></li>
-        <li class=""><a href="#qianduan"><i class="icon-chevron-right"> > </i>  前端字体相关规范</a></li>
-        <li class=""><a href="#marketid"><i class="icon-chevron-right"> > </i>  handle业务对应marketid</a></li>
-        <li class=""><a href="#anquanjiagu"><i class="icon-chevron-right"> > </i>  H5安全加固获取新常规参数</a></li>
-        <li class=""><a href="#closeback"><i class="icon-chevron-right"> > </i>  H5能力之关闭和后退</a></li>
-        <li class=""><a href="#qrcode"><i class="icon-chevron-right"> > </i>  H5能力之调用手厅扫一扫</a></li>
-        <li class=""><a href="#nettype"><i class="icon-chevron-right"> > </i>  H5能力之手机网络类型检测</a></li>
-      </ul>
+
+*   [_ > _ 外部唤醒手厅(非免登)](#huanxing1)
+*   [_ > _ 外部唤醒手厅(免登)](#huanxing2)
+*   [_ > _ 内部h5页面跳转到native](#tiaozhuan)
+*   [_ > _ 获取版本号](#banben)
+*   [_ > _ 判断是否是手厅](#isApp)
+*   [_ > _ 分享能力](#share)
+*   [_ > _ 通讯录（单条&所有人）](#txl)
+*   [_ > _ H5页面点击调用登录框功能](#login)
+*   [_ > _ H5页面内部跳转js方法](#relogin)
+*   [_ > _ 外部唤醒手厅(非免登2)](#huanxing3)
+*   [_ > _ 安卓/ios客户端对应包名](#baoming)
+*   [_ > _  插码规范](#chama)
+*   [_ > _  前端字体相关规范](#qianduan)
+*   [_ > _  handle业务对应marketid](#marketid)
+*   [_ > _  H5安全加固获取新常规参数](#anquanjiagu)
+*   [_ > _  H5能力之关闭和后退](#closeback)
+*   [_ > _  H5能力之调用手厅扫一扫](#qrcode)
+*   [_ > _  H5能力之手机网络类型检测](#nettype)
     </div>
     <div class="span9">
 <!--       <div class="alert alert-info">
-        <p class="lead">2015.12.31</p>
-        <p class="lead">1.增加测试页面二维码</p>
-        <p class="lead">2.增加 外部唤醒手厅(免登)</p>
-        <p class="lead">2016.01.22</p>
-        <p class="lead">1.增加H5页面内部跳转js方法（可传手势密码 title等）</p>
-        <p class="lead">2.增加外部渠道唤醒优化：能定义是否显示启动广告</p>
-        <p class="lead">2016.01.25</p>
-        <p class="lead">ios唤醒至h5后带的参数位数有限制；ios唤醒至native后带的参数位数无限制，并改成_separator_分隔符</p>
-        <p class="lead">2016.01.28</p>
-        <p class="lead">外部唤醒手厅(非免登 增加可配置启动广告) 中安卓版本限制为：>2.1.4</p>
-        <p class="lead">2016.02.17</p>
-        <p class="lead">增加安卓/ios 对应包名</p>
-        <p class="lead">2016.03.03</p>
-        <p class="lead">增加插码规范</p>
-        <p class="lead">2016.03.07</p>
-        <p class="lead">增加前端字体相关规范</p>
-        <p class="lead">2016.03.14</p>
-        <p class="lead">增加marketid</p>
-        <p class="lead">2016.04.12</p>
-        <p class="lead">增加唤醒到首页demo</p>
+
+2015.12.31
+
+1.增加测试页面二维码
+
+2.增加 外部唤醒手厅(免登)
+
+2016.01.22
+
+1.增加H5页面内部跳转js方法（可传手势密码 title等）
+
+2.增加外部渠道唤醒优化：能定义是否显示启动广告
+
+2016.01.25
+
+ios唤醒至h5后带的参数位数有限制；ios唤醒至native后带的参数位数无限制，并改成_separator_分隔符
+
+2016.01.28
+
+外部唤醒手厅(非免登 增加可配置启动广告) 中安卓版本限制为：>2.1.4
+
+2016.02.17
+
+增加安卓/ios 对应包名
+
+2016.03.03
+
+增加插码规范
+
+2016.03.07
+
+增加前端字体相关规范
+
+2016.03.14
+
+增加marketid
+
+2016.04.12
+
+增加唤醒到首页demo
+
       </div> -->
 
       <section id="huanxing1">
         <div class="page-header">
-          <h1>外部唤醒手厅后打开h5页面(非免登)</h1>
+
+# 外部唤醒手厅后打开h5页面(非免登)
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 //android chrome
 var huanxing_chrome = 'intent://platformapi/startapp?addr=com.businesshall.activity.WebviewActivity&type=url_dna_'+url_h5+'_dna_'+title_h5+'_dna_'+params+'#Intent;package=com.example.businesshall;scheme=zjmobile;end';
@@ -102,15 +127,23 @@ var huanxing_other = 'zjmobile://platformapi/startapp?addr=com.businesshall.acti
 //ios
 var huanxing_ios = 'zjmobilesjyyt://'+title_h5_un+'_value_'+url_h5+'_value_'+params;
 		</pre>
-		<h3>说明：</h3>
-		<p>必须参数：目标网址url;目标网址title;如目标网址包含自带参数，则需要放到params里。具体请参考demo源码。</p>
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/hdshare/feixiangtc.html" target="_blank">demo1</a>
-        <img src="images/demo1.jpg" width="100">
+
+### 说明：
+
+必须参数：目标网址url;目标网址title;如目标网址包含自带参数，则需要放到params里。具体请参考demo源码。
+
+### demo：
+
+        [demo1](http://app.m.zj.chinamobile.com/zjweb/sjyyt/hdshare/feixiangtc.html)
+        ![](images/demo1.jpg)
         <div class="page-header">
-          <h1>唤醒手厅后打开native页面(非免登)</h1>
+
+# 唤醒手厅后打开native页面(非免登)
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 //android chrome
 var huanxing_chrome = 'intent://platformapi/startapp?addr=com.businesshall.activity.QueryAccountBillActivity';
@@ -119,22 +152,31 @@ var huanxing_other = 'zjmobile://platformapi/startapp?addr=com.businesshall.acti
 //ios
 var huanxing_ios = 'zjmobilesjyyt://RootViewController';
 		</pre>
-		<h3>说明：参考demo</h3>
-		<p>替换唤醒码中对应的类名，则唤醒至各个native页面；目前版本（安卓ok，ios：2.3.2）中：ios只能唤醒到首页。</p>
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/hdshare/zhangdancx.html" target="_blank">demo2</a>
-        <img src="images/demo2.jpg" width="100"><br>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/h5huanxingtest.html" target="_blank">demo3:安卓外部唤醒到具体native页面的demo</a>
-        <img src="images/demo3.jpg" width="100">
-        <a href="http://www.hssmwd.com/uploads/hdshare/index.html" target="_blank">demo4:安卓/ios 唤醒到首页</a>
-        <img src="images/demo_index.jpg" width="100">
+
+### 说明：参考demo
+
+替换唤醒码中对应的类名，则唤醒至各个native页面；目前版本（安卓ok，ios：2.3.2）中：ios只能唤醒到首页。
+
+### demo：
+
+        [demo2](http://app.m.zj.chinamobile.com/zjweb/sjyyt/hdshare/zhangdancx.html)
+        ![](images/demo2.jpg)
+
+        [demo3:安卓外部唤醒到具体native页面的demo](http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/h5huanxingtest.html)
+        ![](images/demo3.jpg)
+        [demo4:安卓/ios 唤醒到首页](http://www.hssmwd.com/uploads/hdshare/index.html)
+        ![](images/demo_index.jpg)
       </section>
 
       <section id="huanxing2">
         <div class="page-header">
-          <h1>外部唤醒手厅后打开h5页面(免登)</h1>
+
+# 外部唤醒手厅后打开h5页面(免登)
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 //android chrome
 var huanxing_chrome = 'intent://platformapi/startapp?addr=com.businesshall.activity.WebviewActivity&token='+token+'&type=url_dna_'+url_h5+'_dna_'+title_h5+'_dna_'+params_an+'#Intent;package=com.example.businesshall;scheme=zjmobile;end';
@@ -143,30 +185,46 @@ var huanxing_other = 'zjmobile://platformapi/startapp?addr=com.businesshall.acti
 //ios
 var huanxing_ios = 'zjmobilesjyyt://'+title_h5_un+'_value_'+url_h5+'_value_'+params_ios+'_value_token='+token;//ios唤醒至h5后带的参数位数有限制。第四位放advert；第五位放token
 		</pre>
-		<h3>说明：</h3>
-		<p>对比非免登方式，多了token值。</p>
-        <h3>demo：</h3>
-        <a href="http://www.hssmwd.com/uploads/mianmi_h5.html" target="_blank">demo4</a>
-        <img src="images/demo4.jpg" width="100">
+
+### 说明：
+
+对比非免登方式，多了token值。
+
+### demo：
+
+        [demo4](http://www.hssmwd.com/uploads/mianmi_h5.html)
+        ![](images/demo4.jpg)
         <div class="page-header">
-          <h1>唤醒手厅后打开native页面(免登)</h1>
+
+# 唤醒手厅后打开native页面(免登)
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 gonativeAn="zjmobile://platformapi/startapp?addr=com.businesshall.activity.PaymentActivity&token=" gonativeIos="zjmobilesjyyt://Main_separator_RechargeViewController_separator_token="; //ios唤醒至native后带的参数位数无限制。
 		</pre>
-		<h3>说明：</h3>
-		<p>对比非免登方式，多了token值;对于未来新版ios，抛弃老版本唤醒问题的bug，引入分隔符：_separator_ ，达到ios也能唤醒具体native的功能</p>
-        <h3>demo：</h3>
-        <a href="http://www.hssmwd.com/uploads/mianmi_native.html" target="_blank">demo5</a>
-        <img src="images/demo5.jpg" width="100">
+
+### 说明：
+
+对比非免登方式，多了token值;对于未来新版ios，抛弃老版本唤醒问题的bug，引入分隔符：_separator_ ，达到ios也能唤醒具体native的功能
+
+### demo：
+
+        [demo5](http://www.hssmwd.com/uploads/mianmi_native.html)
+        ![](images/demo5.jpg)
       </section>
 
       <section id="tiaozhuan">
         <div class="page-header">
-          <h1>内部h5页面跳转到native</h1>
+
+# 内部h5页面跳转到native
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 v_ios="RechargeViewController" v_and="window.stub.jsMethod('com.businesshall.activity.PaymentActivity','1','');"
 注：ios: 内部跳转并未涉及到 & _separator_分隔符问题，都是用&。
@@ -181,38 +239,52 @@ android：安卓跳转包名和下面的外部唤醒的包名相同，
 7检查更新 
 第三个参数默认为空，几个第三个参数不为空的例子： window.stub.jsMethod('com.businesshall.activity.OrderActivity','1','marketid&8010020140611001' 跳转到4G飞享套餐（各个业务页更改相应marketid）
 		</pre>
-		<h3>说明：</h3>
-		<p>跳转到其他页面，替换对应类名即可，具体请参考demo源码第53行。</p>
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/h5-ability.html" target="_blank">demo6</a>
-        <img src="images/demo6.jpg" width="100">
+
+### 说明：
+
+跳转到其他页面，替换对应类名即可，具体请参考demo源码第53行。
+
+### demo：
+
+        [demo6](http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/h5-ability.html)
+        ![](images/demo6.jpg)
       </section>
 
       <section id="banben">
         <div class="page-header">
-          <h1>获取版本号</h1>
+
+# 获取版本号
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 引入js：../js/zjversion.js
 页面：var versionid = ZJ.Version.versionid();//定义全局版本号versionid
 注：直接调用时安卓可获取版本号 ios为undefined；解决方案：
 原本直接调用的test()改成setTimeout(function(){test();},0); 
     </pre>
-    <h3>说明：</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyytv3/found/index.html" target="_blank">demo7</a>
-        <img src="images/demo7_new.jpg" width="100">
-        <a href="http://www.nczzt.com/uploads/version2.html" target="_blank">demo7_1</a>
-        <img src="images/demo7_1.jpg" width="100">
+
+### 说明：
+
+### demo：
+
+        [demo7](http://app.m.zj.chinamobile.com/zjweb/sjyytv3/found/index.html)
+        ![](images/demo7_new.jpg)
+        [demo7_1](http://www.nczzt.com/uploads/version2.html)
+        ![](images/demo7_1.jpg)
       </section>
 
       <section id="isApp">
         <div class="page-header">
-          <h1>通过获取版本号来判断当前环境是否是手厅:经过验证在ios的safari浏览器中会先弹框报错，此方法不完善。</h1>
+
+# 通过获取版本号来判断当前环境是否是手厅:经过验证在ios的safari浏览器中会先弹框报错，此方法不完善。
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 var versionid = ZJ.Version.versionid();//定义全局版本号versionid
 
@@ -226,16 +298,22 @@ function isApp(){
   }
 }
     </pre>
-    <h3>说明：</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://www.nczzt.com/uploads/version2.html" target="_blank">demo7</a>
-        <img src="images/demo18.jpg" width="100">
+
+### 说明：
+
+### demo：
+
+        [demo7](http://www.nczzt.com/uploads/version2.html)
+        ![](images/demo18.jpg)
 
         <div class="page-header">
-          <h1>直接判断是否是手厅环境和版本号新方法 20160523</h1>
+
+# 直接判断是否是手厅环境和版本号新方法 20160523
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 var ua = navigator.userAgent.toLowerCase();
 var versionid = '';//手厅版本号
@@ -248,21 +326,28 @@ if(is_app()){
   alert('不是手厅')
 }
 
-
     </pre>
-    <h3>说明：</h3>
-    <p>打开页面同时判断是否手厅 要求安卓>3.0.1 ios>3.0.0 老版本无效 兼容思路可以参考分享功能：若无法使用请升级客户端 引导用户使用最新客户端。
-</p>
-        <h3>demo：</h3>
-        <a href="http://www.nczzt.com/uploads/isapp.html" target="_blank">demo7</a>
-        <img src="images/demo19.jpg" width="100">
+
+### 说明：
+
+打开页面同时判断是否手厅 要求安卓>3.0.1 ios>3.0.0 老版本无效 兼容思路可以参考分享功能：若无法使用请升级客户端 引导用户使用最新客户端。
+
+### demo：
+
+        [demo7](http://www.nczzt.com/uploads/isapp.html)
+        ![](images/demo19.jpg)
       </section>
 
       <section id="share">
         <div class="page-header">
-          <h1>分享能力（朋友 朋友圈 短信 微信） 20160512 新增qq和qq空间和微博v2 手厅版本要求ios>3.0.0 安卓>3.0.1 <br>20160613 新增短信默认入参号码 1个或者多个 手厅版本要求ios>=3.1.0 安卓>=3.1.0</h1>
+
+# 分享能力（朋友 朋友圈 短信 微信） 20160512 新增qq和qq空间和微博v2 手厅版本要求ios>3.0.0 安卓>3.0.1 
+20160613 新增短信默认入参号码 1个或者多个 手厅版本要求ios>=3.1.0 安卓>=3.1.0
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 参数名参	数填写规范	参数说明
 imgUrl_sina  	图片链接	新浪微博配图
@@ -284,18 +369,24 @@ var link_qq = '';//qq和qq空间的链接
 参考 http://www.nczzt.com/uploads/chongzhi/js/clicksharev2.js
 
 		</pre>
-		<h3>说明：参考demo中的分享功能源码 </h3>
-		<p></p>
-        <h3>demo：</h3>
-        <a href="http://www.nczzt.com/uploads/chongzhi/index.html" target="_blank">demo8</a>
-        <img src="images/demo8_2.jpg" width="100">
+
+### 说明：参考demo中的分享功能源码 
+
+### demo：
+
+        [demo8](http://www.nczzt.com/uploads/chongzhi/index.html)
+        ![](images/demo8_2.jpg)
       </section>
 
       <section id="txl">
         <div class="page-header">
-          <h1>通讯录（单条信息、所有联系人信息）</h1>
+
+# 通讯录（单条信息、所有联系人信息）
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 if(is_android()){ 
 	window.stub.jsMethod('contactlist','5','');
@@ -304,18 +395,24 @@ if(is_iphone()){
 	getcontactinfo_ios();
 }
 		</pre>
-		<h3>说明：参考demo中的源码31行</h3>
-		<p></p>
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/h5-ability.html" target="_blank">demo6</a>
-        <img src="images/demo6.jpg" width="100">
+
+### 说明：参考demo中的源码31行
+
+### demo：
+
+        [demo6](http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/h5-ability.html)
+        ![](images/demo6.jpg)
       </section>
 
       <section id="login">
         <div class="page-header">
-          <h1>H5页面点击调用登录框功能</h1>
+
+# H5页面点击调用登录框功能
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 if(is_android()){
   window.stub.gotowebview(islogin,isnative,gotoUrl,urlInfo,mytitle,isgesture);//第一个参数：0为默认正常情况 不需要登录 1为网址无参 需要登录 2为网址有参session过期; 第二个参数： 1 native 2 h5  最后一个1是需要手势，0则不需要手势。
@@ -324,18 +421,24 @@ if(is_iphone()){
   gotowebview_ios(mytitle,gotoUrl,urlInfo,islogin,isgesture);
 }
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/timeouttest2.html" target="_blank">demo9</a>
-        <img src="images/demo9.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [demo9](http://app.m.zj.chinamobile.com/zjweb/sjyyt/test/timeouttest2.html)
+        ![](images/demo9.jpg)
       </section>
 
       <section id="relogin">
         <div class="page-header">
-          <h1>H5页面内部跳转js方法20160511更新</h1>
+
+# H5页面内部跳转js方法20160511更新
+
         </div>
-        <h3>核心代码</h3>
+
+### 核心代码
+
         <pre class="prettyprint linenums prettyprinted">
 说明：使用前加是否是手厅判断（根据具体业务场景而定 仅仅是手厅则不用 如有外部渠道则必须）：
 var versionid = ZJ.Version.versionid();//定义全局版本号versionid
@@ -356,7 +459,7 @@ $('.test').click(function(){
   islogin = 1;//1需要登录 0不需要
   isgesture = 0;//1需要手势 0不需要手势
   goweb(islogin,isgesture,gotoUrl,isnative,mytitle,urlInfo);
-  
+
 仅native特例：
   3期流量专区跳转至魔品应用市场详情页JS方法:(仅安卓)
   版本：3.0.0&3.0.1
@@ -480,43 +583,60 @@ function is_iphone(){
    }
 }
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
+
+### 说明：参考demo
+
     发现二级页 ： http://app.m.zj.chinamobile.com/zjweb/sjyytv3/found/found_list.html
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyytv3/found/found_list.html" target="_blank">发现二级页</a>
-        <img src="images/demo15.jpg" width="100"><br>
-   20160510 demo： http://www.hssmwd.com/uploads/zjjh.html<br>
-        <a href="http://www.hssmwd.com/uploads/zjjh.html" target="_blank">各种混合跳转1（测试包扫一扫）</a>
-        <img src="images/demo16.jpg" width="100"><br>
-   20160517 demo：http://www.nczzt.com/uploads/tiaozhuandemo/index.html<br>
-        <a href="http://www.nczzt.com/uploads/tiaozhuandemo/index.html" target="_blank">各种混合跳转2</a>
-        <img src="images/demo17.jpg" width="100">
+
+### demo：
+
+        [发现二级页](http://app.m.zj.chinamobile.com/zjweb/sjyytv3/found/found_list.html)
+        ![](images/demo15.jpg)
+
+   20160510 demo： http://www.hssmwd.com/uploads/zjjh.html
+
+        [各种混合跳转1（测试包扫一扫）](http://www.hssmwd.com/uploads/zjjh.html)
+        ![](images/demo16.jpg)
+
+   20160517 demo：http://www.nczzt.com/uploads/tiaozhuandemo/index.html
+
+        [各种混合跳转2](http://www.nczzt.com/uploads/tiaozhuandemo/index.html)
+        ![](images/demo17.jpg)
       </section>
 
       <section id="huanxing3">
         <div class="page-header">
-          <h1>外部唤醒手厅(非免登 增加可配置启动广告)</h1>
+
+# 外部唤醒手厅(非免登 增加可配置启动广告)
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 版本要求:ios>2.3.2 ; 安卓>2.1.4
 在唤醒中间页基础之上加入参:advert=0　启动app时有广告页；advert=1　启动app时无广告页
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://www.hssmwd.com/uploads/advert_h5.html" target="_blank">唤醒到H5的demo11</a>
-        <img src="images/demo11.jpg" width="100">
-        <a href="http://www.hssmwd.com/uploads/advert_native.html" target="_blank">唤醒到native的demo12</a>
-        <img src="images/demo12.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [唤醒到H5的demo11](http://www.hssmwd.com/uploads/advert_h5.html)
+        ![](images/demo11.jpg)
+        [唤醒到native的demo12](http://www.hssmwd.com/uploads/advert_native.html)
+        ![](images/demo12.jpg)
       </section>
 
       <section id="baoming">
         <div class="page-header">
-          <h1>安卓/ios 对应包名</h1>
+
+# 安卓/ios 对应包名
+
         </div>
-        <h3>安卓</h3>
+
+### 安卓
+
         <pre class="prettyprint linenums prettyprinted">
 
 'addr=com.businesshall.enterance.NewMainActivity'2.0以上版本首页
@@ -556,7 +676,9 @@ function is_iphone(){
 'addr=com.chinamobile.flow.activity.FlowOrderActivity&type=typevalue3'  type=3:其他流量
 
         </pre>
-        <h3>ios</h3>
+
+### ios
+
         <pre class="prettyprint linenums prettyprinted">
 (带zjmobilesjyyt前缀用于外部唤醒 外部唤醒时才涉及到_separator_分隔符问题，内部跳转是用&符号连接。)
 外部唤醒：
@@ -640,25 +762,35 @@ SecureNum—安心小号
 
       <section id="chama">
         <div class="page-header">
-          <h1>插码规范</h1>
+
+# 插码规范
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 在每个工程文件夹中的js文件夹中引入3个插码文件：webtrends.hm.js webtrends.load.js webtrends.min.js
 在开发文件中每个页面中引入 js/webtrends.load.js即可。
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://app.m.zj.chinamobile.com/zjweb/sjyyt/chongzhiV2/index.html" target="_blank">充值99折</a>
-        <img src="images/demo13.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [充值99折](http://app.m.zj.chinamobile.com/zjweb/sjyyt/chongzhiV2/index.html)
+        ![](images/demo13.jpg)
       </section>
 
       <section id="qianduan">
         <div class="page-header">
-          <h1>字体规范</h1>
+
+# 字体规范
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 1.1  字体(font-family)
 设置字体：Helvetica,Arial ,sans-serif
@@ -669,18 +801,24 @@ SecureNum—安心小号
 并设置：
 adapt(w);// w值为设计稿的1/2
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://www.hssmwd.com/uploads/sjyyt/example/demo.html" target="_blank">前端空白模版</a>
-        <img src="images/demo14.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [前端空白模版](http://www.hssmwd.com/uploads/sjyyt/example/demo.html)
+        ![](images/demo14.jpg)
       </section>
 
       <section id="marketid">
         <div class="page-header">
-          <h1>marketid</h1>
+
+# marketid
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 MARKETID  MARKETNAME
 8010020140101010  金华购智能机送话费活动
@@ -740,24 +878,34 @@ MARKETID  MARKETNAME
 
       <section id="anquanjiagu">
         <div class="page-header">
-          <h1>H5安全加固</h1>
+
+# H5安全加固
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 请查看 http://www.nczzt.com/uploads/anquanjiagu/js/zjreload.js
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://www.nczzt.com/uploads/anquanjiagu/index.html" target="_blank">H5安全加固</a>
-        <img src="images/demo14.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [H5安全加固](http://www.nczzt.com/uploads/anquanjiagu/index.html)
+        ![](images/demo14.jpg)
       </section>
 
       <section id="closeback">
         <div class="page-header">
-          <h1>H5能力之关闭和后退</h1>
+
+# H5能力之关闭和后退
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 引入zjcloseback.js
 ZJ.doClose();
@@ -765,18 +913,24 @@ ZJ.doReturn();
 具体请查看 http://www.nczzt.com/uploads/closeback/js/zjcloseback.js 
 最新能力要求安卓 ios 版本 : >3.0.2
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://www.nczzt.com/uploads/closeback/index.html" target="_blank">H5能力之关闭和后退</a>
-        <img src="images/demo21.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [H5能力之关闭和后退](http://www.nczzt.com/uploads/closeback/index.html)
+        ![](images/demo21.jpg)
       </section>
 
       <section id="qrcode">
         <div class="page-header">
-          <h1>H5能力之调用手厅扫一扫</h1>
+
+# H5能力之调用手厅扫一扫
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 引入zjqrcode.js
 ZJ.Qrcode.doQrcode();
@@ -786,18 +940,24 @@ ZJ.Qrcode.doQrcode();
 
 此扫一扫是获取二维码中的字符串 回调给前端页面使用
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://www.nczzt.com/uploads/qrcode/index.html" target="_blank">H5能力之调用手厅扫一扫</a>
-        <img src="images/demo21.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [H5能力之调用手厅扫一扫](http://www.nczzt.com/uploads/qrcode/index.html)
+        ![](images/demo21.jpg)
       </section>
 
       <section id="nettype">
         <div class="page-header">
-          <h1>H5能力之手机网络类型检测</h1>
+
+# H5能力之手机网络类型检测
+
         </div>
-        <h3>参数说明</h3>
+
+### 参数说明
+
         <pre class="prettyprint linenums prettyprinted">
 zjnettype.js
 ZJ.Nettype.getNetType();
@@ -809,11 +969,13 @@ ZJ.Nettype.getNetType();
 
 获取方式方法类似版本号，ios如有bug 可加点击获取或者延时处理，参考获取版本号的方法
     </pre>
-    <h3>说明：参考demo</h3>
-    <p></p>
-        <h3>demo：</h3>
-        <a href="http://www.nczzt.com/uploads/nettype.html" target="_blank">H5能力之手机网络类型检测</a>
-        <img src="images/demo23.jpg" width="100">
+
+### 说明：参考demo
+
+### demo：
+
+        [H5能力之手机网络类型检测](http://www.nczzt.com/uploads/nettype.html)
+        ![](images/demo23.jpg)
       </section>
 
     </div>
@@ -821,11 +983,11 @@ ZJ.Nettype.getNetType();
 </div>
 <footer class="footer">
   <div class="container">
-    <p>浙江移动手机营业厅</p>
-    <ul class="footer-links">
-      <li><a href="http://app.m.zj.chinamobile.com/zjweb/download.jsp" target="_blank">back to home</a></li>
-      <li class="muted">·</li>
-    </ul>
+
+浙江移动手机营业厅
+
+*   [back to home](http://app.m.zj.chinamobile.com/zjweb/download.jsp)
+*   ·
   </div>
 </footer>
 <script src="./js/jquery.min.js" type="text/javascript"></script> 
