@@ -1,41 +1,6 @@
-<header class="jumbotron subhead" id="overview">
-
-<div class="container">
-
-# 手厅H5能力规范
-
-v20160704
-
-</div>
-
-</header>
-
 <div class="container">
 
 <div class="row">
-
-<div class="span3 bs-docs-sidebar">
-
-*   [_>_ 外部唤醒手厅(非免登)](#huanxing1)
-*   [_>_ 外部唤醒手厅(免登)](#huanxing2)
-*   [_>_ 内部h5页面跳转到native](#tiaozhuan)
-*   [_>_ 获取版本号](#banben)
-*   [_>_ 判断是否是手厅](#isApp)
-*   [_>_ 分享能力](#share)
-*   [_>_ 通讯录（单条&所有人）](#txl)
-*   [_>_ H5页面点击调用登录框功能](#login)
-*   [_>_ H5页面内部跳转js方法](#relogin)
-*   [_>_ 外部唤醒手厅(非免登2)](#huanxing3)
-*   [_>_ 安卓/ios客户端对应包名](#baoming)
-*   [_>_ 插码规范](#chama)
-*   [_>_ 前端字体相关规范](#qianduan)
-*   [_>_ handle业务对应marketid](#marketid)
-*   [_>_ H5安全加固获取新常规参数](#anquanjiagu)
-*   [_>_ H5能力之关闭和后退](#closeback)
-*   [_>_ H5能力之调用手厅扫一扫](#qrcode)
-*   [_>_ H5能力之手机网络类型检测](#nettype)
-
-</div>
 
 <div class="span9">
 
