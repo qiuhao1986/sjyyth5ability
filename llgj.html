@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>流量管家H5能力规范</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<meta name="application-name" content="bootcss.com">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" href="./css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+<link type="text/css" href="./css/font-awesome.min.css" rel="stylesheet">
+<link href="./css/docs.css" rel="stylesheet">
+<link href="./css/prettify.css" rel="stylesheet">
+<style type="text/css">
+.bs-docs-sidenav li{ line-height: 18px;}
+</style>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="http://app.m.zj.chinamobile.com/zjweb/download.jsp" target="_blank">浙江移动手机营业厅</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"> <a href="index.html">手厅手册</a> </li>
+          <li class="active"> <a href="urls.html">H5汇总</a> </li>
+          <li class="active"> <a href="llgj.html">流量管家手册</a> </li>
+        </ul>
+        <div id="twitter-share" class="pull-right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>流量管家H5能力规范 </h1>
+    <p class="lead"> v20160721 </p>
+  </div>
+  <div id="version"></div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="span3 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav affix-top">
+        <li class=""><a href="#version"><i class="icon-chevron-right"> > </i> 判断管家并获取管家版本号</a></li>
+      </ul>
+    </div>
+    <div class="span9">
+
+      <section id="version">
+        <div class="page-header">
+          <h1>判断管家并获取管家版本号</h1>
+        </div>
+        <h3>核心代码</h3>
+        <pre class="prettyprint linenums prettyprinted">
+        var ua = navigator.userAgent.toLowerCase();
+        var versionid = '';//管家版本号
+        //var ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E230 llgj/1.0.0';//test
+
+        if(is_gjapp()){
+          alert('是管家')
+          var versionid = ua.match(/sjyyt\/(\S*)/)[1];//获取版本号
+          alert('版本号是'+versionid)
+        }else{
+          alert('不是管家')
+        }
+
+        function is_gjapp() {
+          if (ua.match(/llgj/i) == "llgj"){
+            return true;
+          } else {
+            return false;
+          }
+        }
+		    </pre>
+		    <h3>说明：</h3>
+		    <p>打开页面同时判断是否是管家</p>
+        <h3>demo：</h3>
+        <a href="http://nczzt.com/uploads/isgjapp.html" target="_blank">demo1</a>
+        <img src="images_gj/demo1.jpg" width="100">        
+      </section>
+
+
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p>浙江移动手机营业厅</p>
+    <ul class="footer-links">
+      <li><a href="http://app.m.zj.chinamobile.com/zjweb/download.jsp" target="_blank">back to home</a></li>
+      <li class="muted">·</li>
+    </ul>
+  </div>
+</footer>
+<script src="./js/jquery.min.js" type="text/javascript"></script> 
+<script src="./js/bootstrap.min.js" type="text/javascript"></script> 
+<script src="./js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script> 
+<script src="./js/prettify.js" type="text/javascript"></script> 
+<script src="./js/docs.js" type="text/javascript"></script>
+</body>
+</html>
