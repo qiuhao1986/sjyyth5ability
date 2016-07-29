@@ -51,6 +51,8 @@
         <li class=""><a href="#share"><i class="icon-chevron-right"> > </i> 分享能力</a></li>
         <li class=""><a href="#contact"><i class="icon-chevron-right"> > </i> 单个联系人</a></li>
         <li class=""><a href="#nettype"><i class="icon-chevron-right"> > </i> 网络类型</a></li>
+        <li class=""><a href="#phoneinfo"><i class="icon-chevron-right"> > </i> 获取手机相关信息</a></li>
+        <li class=""><a href="#closeback"><i class="icon-chevron-right"> > </i> 前进后退 包含内部跳转方法</a></li>
       </ul>
     </div>
     <div class="span9">
@@ -134,6 +136,33 @@
       </pre>
         <h3>demo：</h3>
         <a href="http://20.26.20.79:8080/demo/nettype.html" target="_blank">demo</a>      
+      </section>
+
+      <section id="phoneinfo">
+        <div class="page-header">
+          <h1>获取手机相关信息</h1>
+        </div>
+        <h3>核心代码</h3>
+        <p>安卓是：imei和手机品牌 ios是：imei</p>
+        <pre class="prettyprint linenums prettyprinted">        
+        参考 http://20.26.20.79:8080/demo/phoneinfo.html 源码
+      </pre>
+        <h3>demo：</h3>
+        <a href="http://20.26.20.79:8080/demo/phoneinfo.html" target="_blank">demo</a>      
+      </section>
+
+      <section id="closeback">
+        <div class="page-header">
+          <h1>前进后退 包含内部跳转方法</h1>
+        </div>
+        <h3>核心代码</h3>
+        <pre class="prettyprint linenums prettyprinted">        
+        调用原生关闭和后退参考 http://20.26.20.79:8080/demo/js/gjcloseback.js
+        内部跳转参考 http://20.26.20.79:8080/demo/js/gjgoweb.js
+      </pre>
+        <p>内部跳转方法中：原isgesture是否需要手势废除；新增desc 为分享默认文案内容参数。对native无效。仅H5生效，如果有值，会让新打开的webview包含native自带分享按钮；否则无native自带分享按钮</p>
+        <h3>demo：</h3>
+        <a href="http://20.26.20.79:8080/demo/closeback/index.html" target="_blank">demo</a>      
       </section>
 
 
