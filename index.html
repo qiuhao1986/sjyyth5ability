@@ -15,7 +15,7 @@
 <link href="./css/docs.css" rel="stylesheet">
 <link href="./css/prettify.css" rel="stylesheet">
 <style type="text/css">
-.bs-docs-sidenav li{ line-height: 16px;}
+.bs-docs-sidenav li{ line-height: 14px;}
 </style>
 </head>
 <body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
@@ -38,7 +38,7 @@
 <header class="jumbotron subhead" id="overview">
   <div class="container">
     <h1>手厅H5能力规范 </h1>
-    <p class="lead"> v20160805 </p>
+    <p class="lead"> v20160816 </p>
   </div>
   <div id="version"></div>
 </header>
@@ -66,6 +66,7 @@
         <li class=""><a href="#nettype"><i class="icon-chevron-right"> > </i>  H5能力之手机网络类型检测</a></li>
         <li class=""><a href="#xiangce"><i class="icon-chevron-right"> > </i>  H5能力之安卓获取本机相册</a></li>
         <li class=""><a href="#yaoyiyao"><i class="icon-chevron-right"> > </i>  H5能力之摇一摇</a></li>
+        <li class=""><a href="#imei"><i class="icon-chevron-right"> > </i>  H5能力之获取imei</a></li>
       </ul>
     </div>
     <div class="span9">
@@ -843,6 +844,20 @@ ZJ.Shake.openShake();
         <h3>demo：</h3>
         <a href="http://nczzt.com/uploads/shake.html" target="_blank">H5能力之摇一摇</a>
         <img src="images/demo24.jpg" width="100">
+      </section>
+
+      <section id="imei">
+        <div class="page-header">
+          <h1>H5能力之获取imei</h1>
+        </div>
+        <h3>参数说明</h3>
+        <pre class="prettyprint linenums prettyprinted">
+最新能力要求版本: 安卓 无; ios >= 3.1.1
+安卓为真实imei； ios为替代imei
+        </pre>
+        <h3>demo：</h3>
+        <a href="http://www.nczzt.com/uploads/imei/index.html" target="_blank">H5能力之获取imei</a>
+        <img src="images/demo26.jpg" width="100">
       </section>
 
     </div>
